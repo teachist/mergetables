@@ -16,12 +16,12 @@ Now you can use it to merge files(spreadsheets) with same templates.
 COMMANDS
 
 ```python3
-python appv3.py xpx sample 0 5 1
+python main.py xpx sample 0 5 1
 ```
 
 PS:
 
-- `appv3.py` is our script file writen by python3
+- `main.py` is our script file writen by python3
 - `xpx` is the files where you want to be merged
 - `smaple` is the output file
 - `0` define which sheet you want to merge in each file

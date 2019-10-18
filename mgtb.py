@@ -4,10 +4,12 @@ from xlwt import Workbook, easyxf
 import sys
 import os
 
-# start_rwo, verify_key, sheet_key, fname
+# global values
+results = []
 
 
 def get_row(fname, index_of_book, start_row=0, verify_key=-1, sheet_key=0):
+    """ start_rwo, verify_key, sheet_key, fname """
     global results
     current_file = os.path.split(fname)[1]
     # print(filename)
@@ -55,19 +57,20 @@ def get_filelist(root_dir):
     return sorted(file_list)
 
 
-args = sys.argv[1:]
-forder_name = args[0]
-to_save_fname = args[1]
-sheet_key = int(args[2])
-start_row = int(args[3])
-verify_key = int(args[4])
+def mgtb():
 
-results = []
-file_list = get_filelist(forder_name)
-for filename in file_list:
-    if os.path.isfile(filename):
-        index_of_book = file_list.index(filename)
-        results = get_row(filename, index_of_book, start_row=start_row,
-                          verify_key=verify_key, sheet_key=sheet_key)
+    args = sys.argv[1:]
+    forder_name = args[0]
+    to_save_fname = args[1]
+    sheet_key = int(args[2])
+    start_row = int(args[3])
+    verify_key = int(args[4])
 
-create_sheet(results, len(file_list), to_save_fname)
+    file_list = get_filelist(forder_name)
+    for filename in file_list:
+        if os.path.isfile(filename):
+            index_of_book = file_list.index(filename)
+            results = get_row(filename, index_of_book, start_row=start_row,
+                              verify_key=verify_key, sheet_key=sheet_key)
+
+    create_sheet(results, len(file_list), to_save_fname)
