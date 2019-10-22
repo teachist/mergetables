@@ -2,3 +2,7 @@
 /xpx/*
 /yb/*
 __pycache__/*
+/data/*
+merge.xls
+test.xls
+/mgtb.egg-info/*

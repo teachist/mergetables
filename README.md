@@ -2,6 +2,8 @@
 
 # MERGE ANY EXCEL WITH SAME TEMPLATE
 
+## INTRODUCTION
+
 This script helps me a lot in my daily worklaod. My main work was to collect many spreadsheets with same templates, when all the things were ready, like cleaned the data, audited the data, I need to merge all the table to a single file, you konw it is all the reapted work and it is very boring, so I designed this program to pull me out.
 
 If you are in the same situation, it may help you. Feel free to use it and get your work down.
@@ -14,6 +16,20 @@ Now you can use it to merge files(spreadsheets) with same templates.
 
 - Improve from 2018 app.py
 - Using xlwt, xlrd module, because it can operate *.xlsx
+
+## HOW TO INSTALL
+
+1. Clone this repository to your computer.
+
+   `git clone https://github/starttolearning/mergetable`
+
+2. Install from the requirements.txt using your pip
+    
+    `pip install -r requirement.txt`
+
+3. Install this package to your environment, then you can start to use it
+
+    `pip install --editable .`
 
 ## HOW TO USE
 
@@ -37,6 +53,6 @@ PS:
 This project will group in the future.
 Things that I think it should become much better are following:
 
-- Documentation impeletation
-- Terminal friendly
-- much flexible for any using case
+- [ ] Terminal friendly
+- [ ] Documentation impeletation
+- [ ] much flexible for any using case

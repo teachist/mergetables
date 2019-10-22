@@ -1,4 +1,4 @@
 
         [console_scripts]
-        mgtb=mgtb:mgtb
+        mgtb=main:cli
     
