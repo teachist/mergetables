@@ -32,21 +32,19 @@ Now you can use it to merge files(spreadsheets) with same templates.
     `pip install --editable .`
 
 ## HOW TO USE
-
-COMMANDS
-
-```shell
-mgtb xpx sample 0 5 1
 ```
+Usage: mgtb [OPTIONS] FOLDER_NAME OUTPUT_FILE
 
-PS:
+  Terminal setup for merge table
 
-- `mgtb` is our script file writen by python3
-- `xpx` is the files where you want to be merged
-- `smaple` is the output file
-- `0` define which sheet you want to merge in each file
-- `5` define where the rows you want to start to merge
-- `1` define where the verify key you choose
+Options:
+  --sheet-key INTEGER   Which sheet you want to process.
+  --start-row INTEGER   What row you want to start to include in you output
+                        file.
+  --verify-key INTEGER  Which cell you want to make it as a primary key.
+  --end-col INTEGER     What col you want to end.
+  --help                Show this message and exit.
+```
 
 ## MORE INFO
 
