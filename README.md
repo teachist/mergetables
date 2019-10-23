@@ -1,6 +1,6 @@
 # MERGE ANY EXCEL WITH SAME TEMPLATE
 
-![Project Logo](https://raw.githubusercontent.com/starttolearning/mergetables/master/mergetables.png)
+![Project Logo](https://raw.githubusercontent.com/starttolearning/mergetables/master/assets/mergetables.png)
 
 ## INTRODUCTION
 
