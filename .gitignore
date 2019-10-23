@@ -3,6 +3,6 @@
 /yb/*
 __pycache__/*
 /data/*
-merge.xls
-test.xls
+*.xls
+*.xlsx
 /mgtb.egg-info/*

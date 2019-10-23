@@ -1,13 +1,14 @@
-import os
-import sys
-from xlwt import Workbook, easyxf
-from xlrd import open_workbook
 import xlrd
+from xlrd import open_workbook
+from xlwt import Workbook, easyxf
+import sys
+import os
+
 # global values
 results = []
 
 
-def get_row(fname, index_of_book, start_row=0, end_col=None, verify_key=-1, sheet_key=0):
+def get_row(fname, index_of_book, start_row=0, verify_key=-1, sheet_key=0):
     """ start_rwo, verify_key, sheet_key, fname """
     global results
     current_file = os.path.split(fname)[1]
@@ -20,26 +21,13 @@ def get_row(fname, index_of_book, start_row=0, end_col=None, verify_key=-1, shee
         if sh.row_types(rowx)[verify_key] == xlrd.XL_CELL_EMPTY:
             nrows = rowx
             break
-        data = sh.row_values(rowx, end_colx=end_col)
+        results.append(sh.row_values(rowx) + [current_file[:4]])
+        # print(sh.row_values(rowx) + [current_file[:4]])
 
-        # Fill the empty cell with nothing
-        if len(data) < end_col:
-            empty_cells = end_col - len(data)
-            data = data + ['' for _ in range(empty_cells)]
-
-        # append the class identifier
-        results.append(data + [current_file[:4]])
-        # print( data + [current_file[:4]])
-        # print(len(sh.row_values(rowx) + [current_file[:4]]))
-
-    if int(current_file[:4]):
-        if current_file[2:4] == '01':
-            print()
-        print(
-            f'\t{index_of_book+1:02}\t{current_file[:2]}级{current_file[2:4]}班\t共统计到{nrows- start_row + 1}条记录')
-    else:
-        print(
-            f'\t{index_of_book+1:02}\t{current_file[:4]}\t共统计到{nrows- start_row + 1}条记录')
+    if current_file[2:4] == '01':
+        print()
+    print(
+        f'\t{index_of_book+1:02}\t{current_file[:2]}级{current_file[2:4]}班\t共统计到{nrows- start_row + 1}条记录')
 
     return results
 
@@ -69,21 +57,20 @@ def get_filelist(root_dir):
     return sorted(file_list)
 
 
-def mergetable(folder_name, to_save_fname, sheet_key=None, start_row=None, verify_key=None, end_col=None):
+def mgtb():
 
-    # args = sys.argv[1:]
-    # forder_name = args[0]
-    # to_save_fname = args[1]
-    # sheet_key = int(args[2])
-    # start_row = int(args[3])
-    # verify_key = int(args[4])
-    # end_col = int(args[5])
+    args = sys.argv[1:]
+    forder_name = args[0]
+    to_save_fname = args[1]
+    sheet_key = int(args[2])
+    start_row = int(args[3])
+    verify_key = int(args[4])
 
-    file_list = get_filelist(folder_name)
+    file_list = get_filelist(forder_name)
     for filename in file_list:
         if os.path.isfile(filename):
             index_of_book = file_list.index(filename)
-            results = get_row(filename, index_of_book, start_row=start_row, end_col=end_col,
+            results = get_row(filename, index_of_book, start_row=start_row,
                               verify_key=verify_key, sheet_key=sheet_key)
 
     create_sheet(results, len(file_list), to_save_fname)

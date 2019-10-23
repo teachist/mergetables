@@ -1,6 +1,6 @@
-![](https://raw.githubusercontent.com/starttolearning/mergetables/master/mergetables.png)
-
 # MERGE ANY EXCEL WITH SAME TEMPLATE
+
+![Project Logo](https://raw.githubusercontent.com/starttolearning/mergetables/master/mergetables.png)
 
 ## INTRODUCTION
 
@@ -24,15 +24,16 @@ Now you can use it to merge files(spreadsheets) with same templates.
    `git clone https://github/starttolearning/mergetable`
 
 2. Install from the requirements.txt using your pip
-    
-    `pip install -r requirement.txt`
+  
+  `pip install -r requirement.txt`
 
 3. Install this package to your environment, then you can start to use it
 
-    `pip install --editable .`
+  `pip install --editable .`
 
 ## HOW TO USE
-```
+
+```shell
 Usage: mgtb [OPTIONS] FOLDER_NAME OUTPUT_FILE
 
   Terminal setup for merge table
