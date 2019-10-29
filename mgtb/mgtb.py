@@ -71,15 +71,6 @@ def get_filelist(root_dir):
 
 
 def mergetable(folder_name, to_save_fname, sheet_key=None, start_row=None, verify_key=None, end_col=None):
-
-    # args = sys.argv[1:]
-    # forder_name = args[0]
-    # to_save_fname = args[1]
-    # sheet_key = int(args[2])
-    # start_row = int(args[3])
-    # verify_key = int(args[4])
-    # end_col = int(args[5])
-
     file_list = get_filelist(folder_name)
     for filename in file_list:
         if os.path.isfile(filename):
