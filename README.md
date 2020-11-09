@@ -1,4 +1,4 @@
-# Merge any excel spreadsheet with same template
+# Merge any excel spreadsheet with same the template
 
 
 ![Project Logo](https://raw.githubusercontent.com/starttolearning/mergetables/master/assets/mergetables.png)
@@ -15,6 +15,7 @@ A excel file consists of rows and columns.  However in a rountine, we usually in
 
 Now after a fewer tries I got it right. You can use it to merge files(spreadsheets) with same templates at easy.
 
+- Template detection
 - Improve from 2018 old one time use
 - Using xlwt, xlrd module, because it can operate *.xlsx
 
@@ -26,7 +27,7 @@ Now after a fewer tries I got it right. You can use it to merge files(spreadshee
 
 2. Install from the requirements.txt using your pip
   
-  `pip install -r requirement.txt`
+  `pip install -r requirements.txt`
 
 3. Install this package to your environment, then you can start to use it
 

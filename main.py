@@ -1,11 +1,13 @@
 import click
+import sys
+from mgtb.Mergetable import Mergetable
+from mgtb.utils import print_data
 
-from mgtb.mgtb import mergetable
 
 '''
 Usage: mgtb [OPTIONS] FOLDERNAME OUTPUTFILE
 
-  Simple program that greets NAME for a total of COUNT times.
+Simple program that greets NAME for a total of COUNT times.
 
 Options:
   --sheet-key INTEGER  Which sheet you want to process.
@@ -16,6 +18,8 @@ Options:
   --help           Show this message and exit.
 
 '''
+
+
 @click.command()
 @click.argument('folder_name')
 @click.argument('output_file')
@@ -24,14 +28,15 @@ Options:
 @click.option('--verify-key', default=1, help='Which cell or the column you want to make it as a primary key.')
 @click.option('--end-col',  help='In what columns you want to make it as end.', type=int)
 def cli(folder_name, output_file, sheet_key, start_row, verify_key, end_col):
-    """ Terminal setup for merge table
+    """ Comamand Line tool for merging spreadsheets.
 
         MGTB can merge any excel spreadsheets when its template is same.
         You can easily merge a ton of spreadsheet in just a second with
         the help of the powerful python scripts.
 
     """
-    click.echo('Hello World!')
-    # click.echo(folder_name, output_file, sheet_key)
-    mergetable(folder_name, output_file, sheet_key=sheet_key,
-               start_row=start_row, verify_key=verify_key, end_col=end_col)
+    click.echo('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+    click.echo('+++ Welcome to use this utils for your boring work! +++')
+    click.echo('+++ Created by AITTStudio, Wilton Lee               +++')
+    click.echo('+++++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+    Mergetable(folder_name, output_file)

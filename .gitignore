@@ -1,8 +1,13 @@
 .DS_Store
 /xpx/*
+/789/*
 /yb/*
 __pycache__/*
 /data/*
 *.xls
 *.xlsx
 /mgtb.egg-info/*
+*.pyc
+*.xls
+*.xlsx
+/mgtb/__pycache__/*.pyc
