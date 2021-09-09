@@ -23,7 +23,7 @@ Now after a fewer tries I got it right. You can use it to merge files(spreadshee
 
 1. Clone this repository to your computer.
 
-   `git clone https://github/starttolearning/mergetable`
+   `https://github.com/starttolearning/mergetables.git`
 
 2. Install from the requirements.txt using your pip
   
